@@ -12,6 +12,9 @@ import { Input } from '@/components/Input'
 import { Container } from '@/components/Container'
 import { ThemeContextProvider } from '@/components/context/ThemeContext'
 import { Box } from '@/components/context/Box'
+import { UserContextProvider } from '@/components/context/UserContext'
+import { User } from '@/components/state/User'
+import { List } from '@/components/generics/List'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -64,6 +67,17 @@ export default function Home() {
        <ThemeContextProvider>
         <Box />
        </ThemeContextProvider>
+       <UserContextProvider>
+          <User />
+       </UserContextProvider>
+       <List 
+       items={['Batman', 'Superman',]}
+       onClick = {(item) => console.log(item)}
+       />
+       <List 
+       items={[1,2,3]}
+       onClick = {(item) => console.log(item)}
+       />
       </main>
     </>
   )
